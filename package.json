@@ -18,6 +18,12 @@
         "command": "extension.classNameCopier",
         "title": "className Copier"
       }
+    ],
+    "keybindings":[
+      {
+        "command": "extension.classNameCopier",
+        "key": "Ctrl+Alt+C"
+      }
     ]
   },
   "devDependencies": {
