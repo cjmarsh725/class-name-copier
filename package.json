@@ -22,7 +22,7 @@
     "keybindings":[
       {
         "command": "extension.classNameCopier",
-        "key": "Ctrl+Alt+C"
+        "key": "Ctrl+Shift+Alt+C"
       }
     ]
   },
