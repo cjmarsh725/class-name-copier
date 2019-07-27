@@ -6,6 +6,20 @@
   "main": "./extension.js",
   "repository": "https://github.com/cjmarsh725/classname-copier.git",
   "homepage": "https://github.com/cjmarsh725/classname-copier#readme",
+  "engines": {
+    "vscode": "^1.32.0"
+  },
+  "activationEvents": [
+    "onCommand:extension.classNameCopier"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.classNameCopier",
+        "title": "className Copier"
+      }
+    ]
+  },
   "devDependencies": {
     "vscode": "^1.1.35"
   }
