@@ -1,7 +1,6 @@
 const vscode = require("vscode");
 
 const activate = context => {
-  console.log ("className Copier is now active.");
   let disposable = vscode.commands.registerCommand("extension.classNameCopier", () => {
     let editor = vscode.window.activeTextEditor;
     const document = editor.document;
