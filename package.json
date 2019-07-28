@@ -1,12 +1,12 @@
 {
   "name": "class-name-copier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A VS Code extension that makes it easier to copy JSX classNames into CSS files",
   "author": "Chris Marsh",
   "publisher": "cjmarsh725",
   "main": "./extension.js",
-  "repository": "https://github.com/cjmarsh725/classname-copier.git",
-  "homepage": "https://github.com/cjmarsh725/classname-copier#readme",
+  "repository": "https://github.com/cjmarsh725/class-name-copier.git",
+  "homepage": "https://github.com/cjmarsh725/class-name-copier#readme",
   "engines": {
     "vscode": "^1.32.0"
   },
