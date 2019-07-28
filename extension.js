@@ -9,13 +9,24 @@ const activate = context => {
     const range = document.getWordRangeAtPosition(position, /[a-z\-]+/);
     const className = document.getText(range);
     vscode.window.showInformationMessage("classNameCopier: " + document.fileName.replace(".js", ".css"));
+    let testIndex = 0;
     vscode.window.showTextDocument(vscode.Uri.file(document.fileName.replace(".js", ".css")))
     .then(textDoc => {
       editor = vscode.window.activeTextEditor;
       editor.edit(editorBuilder => {
         const doc = editor.document;
-        const pos = doc.lineAt(doc.lineCount - 1).range.end;
-        editorBuilder.insert(pos, "This is a test");
+        testIndex = doc.lineCount - 1;
+        while (testIndex >= 0) {
+          if (doc.lineAt(testIndex).isEmptyOrWhitespace) testIndex -= 1;
+          else break;
+        }
+        const endPos = doc.lineAt(testIndex).range.end;
+        editorBuilder.insert(endPos, "\n\n." + className + " {\n\t\n}");
+      }).then(result => {
+        const newPos = new vscode.Position(testIndex + 3, 1);
+        const newSelection = new vscode.Selection(newPos, newPos);
+        editor.selection = newSelection;
+        editor.revealRange(newSelection.with());
       });
     });
   });
