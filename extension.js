@@ -5,7 +5,7 @@ const activate = context => {
     let editor = vscode.window.activeTextEditor;
     const document = editor.document;
     const position = editor.selection.start;
-    const range = document.getWordRangeAtPosition(position, /[a-z\-]+/);
+    const range = document.getWordRangeAtPosition(position, /[A-Za-z\-]+/);
     const className = document.getText(range);
     let testIndex = 0;
     let isFirstLine = true;
